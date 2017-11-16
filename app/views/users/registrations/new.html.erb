@@ -1,7 +1,11 @@
 <h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -19,6 +23,18 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <p> Choose which bathrooms you would like to see: </p>
+  <p> Gender neutral bathrooms will show up regardless of the one you choose. </p>
+  <div class="field">
+    <%= f.label :male %><br />
+    <%= f.check_box :male, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :female %><br />
+    <%= f.check_box :male, autofocus: true %>
   </div>
 
   <div class="actions">
