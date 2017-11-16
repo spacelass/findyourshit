@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+area_list = ['College of Natural Resources', 'Sproul', 'College of Engineering']
+area_list.each do |name|
+  Area.create(name: name)
+end

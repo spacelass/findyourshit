@@ -1,4 +1,5 @@
 <h3>Welcome to Find Your Shit, <%= @user.name %>!</h3>
+<p>Registered Reviewers: <%= User.count %> </p>
 <p>Your chosen bathrooms are: </p>
 <p>Gender neutral </p>
 <p><% if @user.male == false %>
@@ -7,3 +8,4 @@
 <p><% if @user.female == false%>
     Female
     <% end %> </p>
+Choose how you would like to see your bathrooms:
