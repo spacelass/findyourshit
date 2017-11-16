@@ -1868,3 +1868,68 @@ Migrating to CreateAreas (20171116154006)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "areas" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "College of Engineering"], ["created_at", "2017-11-16 15:41:18.908560"], ["updated_at", "2017-11-16 15:41:18.908560"]]
   [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-11-16 08:00:49 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 258ms (Views: 228.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/areas" for 127.0.0.1 at 2017-11-16 08:00:51 -0800
+Processing by AreasController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/henryke/Desktop/findyourshit/app/models/area.rb:3: syntax error, unexpected ':', expecting keyword_end
+as_many :bathrooms, :through :buildings
+                              ^):
+  
+app/models/area.rb:3: syntax error, unexpected ':', expecting keyword_end
+app/controllers/areas_controller.rb:3:in `index'
+Started GET "/areas" for 127.0.0.1 at 2017-11-16 08:02:02 -0800
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/application
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  Rendered areas/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial areas/_area with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/henryke/Desktop/findyourshit/app/views"
+  * "/Users/henryke/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views"
+):
+     6:         <tbody>
+     7:           <% @areas.each do |area| %>
+     8:             <tr>
+     9:               <%= render area %>
+    10:             </tr>
+    11:           <% end %>
+    12:         </tbody>
+  
+app/views/areas/index.html.erb:9:in `block in _app_views_areas_index_html_erb__1677145024443354770_70130263092480'
+app/views/areas/index.html.erb:7:in `_app_views_areas_index_html_erb__1677145024443354770_70130263092480'
+Started GET "/areas" for 127.0.0.1 at 2017-11-16 08:03:11 -0800
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/application
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  Rendered areas/_area.html.erb (0.7ms)
+  Rendered areas/_area.html.erb (0.1ms)
+  Rendered areas/_area.html.erb (0.1ms)
+  Rendered areas/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/areas/1" for 127.0.0.1 at 2017-11-16 08:03:13 -0800
+Processing by AreasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering areas/show.html.erb within layouts/application
+  Rendered areas/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 30.2ms | ActiveRecord: 0.5ms)
+
+
