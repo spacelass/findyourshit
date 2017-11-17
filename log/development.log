@@ -2407,6 +2407,7 @@ Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.4ms)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2017-11-16 15:57:40 -0800
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomeController#index as HTML
@@ -2543,6 +2544,8 @@ Processing by AreasController#show as HTML
   Rendered layouts/_navigation.html.erb (5.9ms)
 Completed 200 OK in 75ms (Views: 70.3ms | ActiveRecord: 0.6ms)
 =======
+=======
+>>>>>>> 38c798a0a596f08d072c8c99286d376c7d2123b4
 Started GET "/" for 127.0.0.1 at 2017-11-16 15:10:18 -0800
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomeController#index as HTML
@@ -3240,6 +3243,9 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation_links.html.erb (0.4ms)
   Rendered layouts/_navigation.html.erb (1.8ms)
 Completed 200 OK in 231ms (Views: 195.6ms | ActiveRecord: 1.1ms)
+<<<<<<< HEAD
+>>>>>>> 38c798a0a596f08d072c8c99286d376c7d2123b4
+=======
 >>>>>>> 38c798a0a596f08d072c8c99286d376c7d2123b4
 
 
