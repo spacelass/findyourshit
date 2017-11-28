@@ -1,13 +1,20 @@
-<h1>Welcome to Find Your Shit, <%= @user.name %>!</h3>
-<p>Registered Reviewers: <%= User.count %> </p>
-<p>Your chosen bathrooms are: </p>
-<p>Gender neutral </p>
-<p><% if @user.male %>
-    Male
-    <% end %> </p>
-<p><% if @user.female%>
-    Female
-    <% end %> </p>
+<div class="center jumbotron">
+  <h1>Welcome to Find Your Shit, <%= @user.name %>!</h3>
+  <p>Registered Reviewers: <%= User.count %> </p>
+  <p>Your chosen bathrooms are: </p>
+  <p>Gender neutral </p>
+  <p><% if @user.male %>
+      Male
+      <% end %> </p>
+  <p><% if @user.female%>
+      Female
+      <% end %> </p>
+  </div>
+
 <h3> Choose how you would like to see your bathrooms:</h3>
 <p> <%= button_to "Areas", areas_path, :method => :get %> </p>
 <p> <%= button_to "Buildings", buildings_path, :method => :get %> </p>
+
+<h3> Or add a new: </h3>
+Area
+<p> <%= button_to "Building", new_building_path, :method => :get %> </p>
