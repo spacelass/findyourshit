@@ -1,0 +1,5 @@
+<h3> Add an Area! </h3>
+<%= simple_form_for @area, url: {action: "create"} do |form| %>
+  <p> Name: <%= form.text_field :name %> </p>
+  <%= form.button :submit %>
+<% end %>

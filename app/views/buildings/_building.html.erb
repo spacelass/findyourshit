@@ -1,4 +1,4 @@
 <td><%= image_tag building.avatar.url(:medium) %></td>
 <td><%= link_to building.name, building %></td>
-<td></td>
+<td><%=building.floors%> floors</td>
 <td><%= link_to Area.find(building.area_id).name, Area.find(building.area_id) %></td>

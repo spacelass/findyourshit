@@ -1,1 +1,18 @@
 <h3> <%= @area.name %> </h3>
+<div class="container">
+  <div class="row">
+    <h3>Buildings</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @area.buildings.each do |building| %>
+            <tr>
+              <%= render building %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p> <%= button_to "Back to Areas", areas_path, :method => :get %> </p>

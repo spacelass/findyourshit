@@ -1,8 +1,8 @@
 <h3> Add a Building! </h3>
 <%= simple_form_for @building, url: {action: "create"} do |form| %>
   Name: <%= form.text_field :name %>
-  <%= form.input :avatar, as: :file %>
-  <%= form.input :floors, input_html: {min: '0', max: '20'}, as: :numeric %>
-  <%= form.association :area, include_blank: false %>
+  <%= form.input :avatar, as: :file, label: 'Avatar: ' %>
+  <%= form.input :floors, input_html: {min: '0', max: '20'}, as: :numeric, label: 'Floors: '%>
+  <%= form.association :area, include_blank: false%>
   <%= form.button :submit %>
 <% end %>
