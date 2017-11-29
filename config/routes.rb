@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :home
   resources :areas, :buildings, :bathrooms, :reviews
+  resources :users
 end

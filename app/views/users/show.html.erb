@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+<% @user.reviews.each do |review| %>
+  <div class="container">
+    <h5><%= Building.find(Bathroom.find(review.bathroom_id).building_id).name %>, Floor <%=Bathroom.find(review.bathroom_id).floor%></h5>
+    <b style="text-align:left;"><%= review.title %>
+      <span style='float:right;'>
+      <%review.rating.to_i.times do %>
+        <span class = "glyphicon glyphicon-star">
+      <% end %></b></span>
+    <p><%= review.body %> </p>
+  </div>
+  <% end %>
