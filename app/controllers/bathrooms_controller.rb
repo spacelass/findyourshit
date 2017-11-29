@@ -9,7 +9,7 @@ class BathroomsController < ApplicationController
 
   def create
     @bathroom = Bathroom.new(bathroom_params)
-    @bathroom.area_id = Building.find(@bathroom.building_id).area_id
+    @bathroom.area_id = Building.find(@bathroom.building_id).area
     if @bathroom.save!
       redirect_to root_path
     end

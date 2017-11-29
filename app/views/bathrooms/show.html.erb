@@ -1,2 +1,18 @@
 <h1> <%= @bathroom.building.name %>, Floor <%= @bathroom.floor %> </h1>
 <p> Gender: <%= @bathroom.gender %> </p>
+<%= link_to "Add Review", new_review_path(bathroom_id: @bathroom.id) %>
+<h3>Reviews: </h3>
+<% @bathroom.reviews.each do |review| %>
+  <div class="container">
+    <h5><%= User.find(review.user_id).name %></h5>
+    <b style="text-align:left;"><%= review.title %>
+      <span style='float:right;'>
+      <%review.rating.to_i.times do %>
+        <span class = "glyphicon glyphicon-star">
+      <% end %></b></span>
+    <p><%= review.body %> </p>
+  </div>
+  <% end %>
+
+
+  <p> <%= button_to "Back to " + Building.find(@bathroom.building_id).name, Building.find(@bathroom.building_id), :method => :get %> </p>

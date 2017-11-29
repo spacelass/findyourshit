@@ -1,0 +1,8 @@
+<h3> Review <%= @bathroom.building.name %>, Floor <%= @bathroom.floor %> </h3>
+<%= simple_form_for @review, url: {action: "create"} do |form| %>
+  <%= form.input :rating, collection: [1, 2, 3, 4, 5], input_html: { class: "ui dropdown", maxlength: 60 }, label: 'Stars: '%>
+  <p> Title: <%= form.text_field :title%> </p>
+  <p> Body: <%= form .text_field :body%> </p>
+  <%= form.association :bathroom, :as => :hidden, :input_html => {:value => @bathroom.id} %>
+  <%= form.button :submit %>
+<% end %>

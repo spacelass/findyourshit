@@ -2,6 +2,6 @@
 <%= simple_form_for @bathroom, url: {action: "create"} do |form| %>
   <%= form.association :building, include_blank: false, label: 'Building: '%>
   <%= form.input :floor, input_html: {min: '1', max: '20'}, as: :numeric, label: 'Floor: ', input_html: {value: '1'}%>
-  <%= form.input :gender, collection: ['Male', 'Female', 'Gender Neutral'], input_html: { class: "ui dropdown", maxlength: 60, }, label: 'Gender: ', include_blank: false %>
+  <%= form.input :gender, collection: ['Male', 'Female', 'Gender Neutral'], input_html: { class: "ui dropdown", maxlength: 60 }, label: 'Gender: ', include_blank: false %>
   <%= form.button :submit %>
 <% end %>
