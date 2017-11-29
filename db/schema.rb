@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128024218) do
+ActiveRecord::Schema.define(version: 20171129013149) do
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
@@ -20,14 +20,12 @@ ActiveRecord::Schema.define(version: 20171128024218) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.string "name"
-    t.float "avg_rate"
-    t.float "avg_clean"
-    t.float "avg_traffic"
     t.string "gender"
     t.integer "building_id"
     t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "floor"
     t.index ["area_id"], name: "index_bathrooms_on_area_id"
     t.index ["building_id"], name: "index_bathrooms_on_building_id"
   end

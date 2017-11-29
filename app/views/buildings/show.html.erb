@@ -1,0 +1,26 @@
+<h1><%=@building.name%></h1>
+<div class="container">
+  <div class="row">
+    <h3>Bathrooms</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @sorted_bathrooms.each do |bathroom| %>
+            <tr>
+              <% if (@user.male && bathroom.gender == 'Male') %>
+                <%= render bathroom %>
+              <% elsif (@user.female && bathroom.gender == 'Female') %>
+                <%= render bathroom %>
+              <% elsif (bathroom.gender = 'Gender Neutral') %>
+                <%= render bathroom %>
+              <% else %>
+               <% next %>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p> <%= button_to "Back to Areas", areas_path, :method => :get %> </p>
